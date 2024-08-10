@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ROG/Desktop/Gomoku-AI-main/judge/AIController.h
+iostream
+-
+string
+-
+utility
+-
+nlohmann/json.hpp
+-
+
+/mnt/c/Users/ROG/Desktop/Gomoku-AI-main/judge/sample.cpp
+AIController.h
+/mnt/c/Users/ROG/Desktop/Gomoku-AI-main/judge/AIController.h
+utility
+-
+cstring
+-
+vector
+-
+unordered_map
+-
+queue
+-
+

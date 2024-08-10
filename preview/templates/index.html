@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>App Title</title>
+        <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+        <script src="../static/lib/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            <span>Hello World</span>
+        </div>
+        <script>
+            window.alert("Hello World!");
+            document.getElementById("content").innerText = 'World'
+            var get = function(res){
+                console.log("Hello World")
+                alert("Hello")
+            }
+            $.get("action/a/1+1", (data, status) => {
+                console.log(data)
+            })
+        </script>
+        <div id="btn">
+            <p onclick="get(this)">Click</p>
+        </div>
+    </body>
+</html>

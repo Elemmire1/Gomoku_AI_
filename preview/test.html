@@ -1,0 +1,35 @@
+
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <ul id="list">
+                <li>1 <span>元素1</span></li>
+                <li>2 <span>元素2</span></li>
+                <li>3 <span>元素3</span></li>
+                <li>4 </li>
+            </ul>
+            <script>
+            // 给父层元素绑定事件
+            document.getElementById('list').addEventListener('click', function (e) {
+                // 获取事件对象event（兼容性处理）
+                var event = e || window.event;
+                // 获取事件的源对象（兼容性处理）
+                var target = event.target || event.srcElement;
+                console.log(target);
+                // 从target（点击）元素向上找currentTarget（监听）元素，找到了想委托的元素就触发事件，没找到就返回null
+                while(target.tagName !== 'LI'){
+                    if(target.tagName === 'UL'){
+                        target = null;
+                        break;
+                    }
+                    target = target.parentNode;
+                }
+                if (target) { alert(target.textContent); }
+            }, false);
+            </script>
+    </body>
+</html>
+    

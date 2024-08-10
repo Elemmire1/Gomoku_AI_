@@ -1,0 +1,87 @@
+/* ref:代码框架由GPT辅助完成 */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 24px;
+}
+
+.board {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+    background-color: #D2B48C; /* 调整颜色为木板黄色 */
+    background-image: linear-gradient(#D2B48C 1px, transparent 1px), linear-gradient(90deg, #D2B48C 1px, transparent 1px); /* 调整线条颜色为木板颜色 */
+    background-size: 40px 40px;
+}
+
+.cell {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: none; /* 移除背景色 */
+    box-sizing: border-box;
+}
+
+.cell::before, .cell::after {
+    content: "";
+    position: absolute;
+    background-color: #000; /* 十字的颜色，可以根据需要调整 */
+    width: 1.5px; /* 十字线宽度 */
+    height: 40px; /* 十字线高度，调整为格子的高度 */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* 设置十字的 z-index 为 1 */
+}
+
+.cell::after {
+    width: 40px; /* 十字线宽度，调整为格子的宽度 */
+    height: 1.5px; /* 十字线高度 */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1; /* 设置十字的 z-index 为 1 */
+}
+
+.piece {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 2; /* 设置棋子的 z-index 为 2，确保在十字的上方 */
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#control-panel {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#control-panel button {
+    margin: 0 10px;
+}
